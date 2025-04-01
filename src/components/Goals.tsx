@@ -1,30 +1,28 @@
-
 import React, { useState } from 'react';
 import { 
-  VoteIcon, 
-  ScaleIcon, 
-  EyeIcon, 
-  HeartHandshakeIcon, 
-  XCircleIcon,
-  HandCoinsIcon,
-  PercentSquareIcon,
-  BuildingIcon,
-  PiggyBankIcon,
-  HomeIcon,
-  CloudSunIcon,
-  MicroscopeIcon,
-  GraduationCapIcon,
-  BookIcon,
-  RobotIcon,
-  HeartPulseIcon,
-  SchoolIcon,
-  BuildingIcon as BuildingIcon2,
-  ShieldIcon,
-  HandshakeIcon,
-  GlobeIcon,
-  ScaleBalanceIcon,
-  BarChartHorizontalIcon,
-  AlertCircleIcon
+  Vote as VoteIcon, 
+  Scale as ScaleIcon, 
+  Eye as EyeIcon, 
+  HeartHandshake as HeartHandshakeIcon, 
+  XCircle as XCircleIcon,
+  HandCoins as HandCoinsIcon,
+  Percent as PercentSquareIcon,
+  Building as BuildingIcon,
+  PiggyBank as PiggyBankIcon,
+  Home as HomeIcon,
+  CloudSun as CloudSunIcon,
+  Microscope as MicroscopeIcon,
+  GraduationCap as GraduationCapIcon,
+  Book as BookIcon,
+  Bot as BotIcon,
+  HeartPulse as HeartPulseIcon,
+  School as SchoolIcon,
+  Shield as ShieldIcon,
+  Handshake as HandshakeIcon,
+  Globe as GlobeIcon,
+  Scale as ScaleIcon2,
+  BarChartHorizontal as BarChartHorizontalIcon,
+  AlertCircle as AlertCircleIcon
 } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -60,7 +58,7 @@ const goals = [
       { text: "Invest in Research & Development", icon: <MicroscopeIcon className="w-5 h-5 text-project-red" /> },
       { text: "Ensure Evidence-Based Policymaking", icon: <GraduationCapIcon className="w-5 h-5 text-project-red" /> },
       { text: "Promote Scientific Literacy", icon: <BookIcon className="w-5 h-5 text-project-red" /> },
-      { text: "Ethical Technology Governance", icon: <RobotIcon className="w-5 h-5 text-project-red" /> },
+      { text: "Ethical Technology Governance", icon: <BotIcon className="w-5 h-5 text-project-red" /> },
     ]
   },
   {
@@ -69,9 +67,9 @@ const goals = [
     items: [
       { text: "Universal Access to Essentials", icon: <HeartPulseIcon className="w-5 h-5 text-project-red" /> },
       { text: "Strengthen Social Safety Nets", icon: <ShieldIcon className="w-5 h-5 text-project-red" /> },
-      { text: "Advance Social & Racial Justice", icon: <ScaleBalanceIcon className="w-5 h-5 text-project-red" /> },
+      { text: "Advance Social & Racial Justice", icon: <ScaleIcon2 className="w-5 h-5 text-project-red" /> },
       { text: "Promote Gender Equity", icon: <SchoolIcon className="w-5 h-5 text-project-red" /> },
-      { text: "Protect Environmental Justice", icon: <BuildingIcon2 className="w-5 h-5 text-project-red" /> },
+      { text: "Protect Environmental Justice", icon: <BuildingIcon className="w-5 h-5 text-project-red" /> },
     ]
   },
   {
