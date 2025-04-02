@@ -107,8 +107,32 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fadeIn 0.8s ease-out forwards',
 				'slide-up': 'slideUp 0.8s ease-out forwards'
-			}
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						a: {
+							color: '#e62b4a',
+							'&:hover': {
+								color: '#c01e3a',
+							},
+						},
+						h1: {
+							color: '#051f31',
+						},
+						h2: {
+							color: '#0a3d62',
+						},
+						h3: {
+							color: '#0a3d62',
+						},
+						strong: {
+							color: '#0a3d62',
+						},
+					},
+				},
+			},
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
 } satisfies Config;
