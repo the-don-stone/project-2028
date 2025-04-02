@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Users, Scale, Lightbulb, TrendingUp, Globe, ShieldCheck } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const principles = [
   {
@@ -43,6 +43,12 @@ const principles = [
 ];
 
 const Principles = () => {
+  const navigate = useNavigate();
+  
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
+  
   return (
     <section className="bg-project-blue text-white py-16" id="principles">
       <div className="section-container">
@@ -53,10 +59,10 @@ const Principles = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {principles.map((principle, index) => (
-            <Link 
-              to={principle.link} 
+            <div 
               key={index}
-              className="principle-card group hover:no-underline"
+              onClick={() => handleNavigate(principle.link)}
+              className="principle-card group hover:no-underline cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center mb-4">
@@ -64,7 +70,7 @@ const Principles = () => {
                 <h3 className="text-xl font-bold ml-3 text-white group-hover:text-project-red transition-colors">{principle.title}</h3>
               </div>
               <p className="text-white/90">{principle.description}</p>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
