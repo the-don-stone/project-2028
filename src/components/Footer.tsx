@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Twitter, Facebook, Instagram, Mail } from 'lucide-react';
+import { Github, Mastodon, Threads, Mail, Bluesky } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -14,13 +14,13 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white/80 hover:text-project-red transition-colors">
-                <Twitter className="w-5 h-5" />
+                <Bluesky className="w-5 h-5" />
               </a>
               <a href="#" className="text-white/80 hover:text-project-red transition-colors">
-                <Facebook className="w-5 h-5" />
+                <Mastodon className="w-5 h-5" />
               </a>
               <a href="#" className="text-white/80 hover:text-project-red transition-colors">
-                <Instagram className="w-5 h-5" />
+                <Threads className="w-5 h-5" />
               </a>
               <a href="#" className="text-white/80 hover:text-project-red transition-colors">
                 <Github className="w-5 h-5" />
@@ -66,6 +66,11 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Project 2028. All rights reserved.</p>
           <p className="mt-2 text-sm">
             Standing for pro-human, pro-union, anti-fascist, anti-oligarch values.
+          </p>
+          <p className="mt-4 text-sm">
+            Designed by: <a href="https://n1ghtw1re-studios.lovable.app/" className="text-project-red hover:underline">N1ghtw1re Studios</a>
+            <br />
+            Contact: <a href="mailto:n1ghtw1re@proton.me" className="text-project-red hover:underline">n1ghtw1re@proton.me</a>
           </p>
         </div>
       </div>
