@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Mastodon, Threads, Mail, Bluesky } from 'lucide-react';
+import { Github, Mail, ExternalLink } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -13,16 +13,16 @@ const Footer = () => {
               A framework for global progress and shared prosperity.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white/80 hover:text-project-red transition-colors">
-                <Bluesky className="w-5 h-5" />
+              <a href="#" className="text-white/80 hover:text-project-red transition-colors" title="Bluesky">
+                <ExternalLink className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white/80 hover:text-project-red transition-colors">
-                <Mastodon className="w-5 h-5" />
+              <a href="#" className="text-white/80 hover:text-project-red transition-colors" title="Mastodon">
+                <ExternalLink className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white/80 hover:text-project-red transition-colors">
-                <Threads className="w-5 h-5" />
+              <a href="#" className="text-white/80 hover:text-project-red transition-colors" title="Threads">
+                <ExternalLink className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white/80 hover:text-project-red transition-colors">
+              <a href="#" className="text-white/80 hover:text-project-red transition-colors" title="Github">
                 <Github className="w-5 h-5" />
               </a>
             </div>
