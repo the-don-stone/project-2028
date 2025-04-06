@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Users, CheckCircle, Download, FileText, MessageSquare, Award } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +5,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbS
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from 'react-router-dom';
+import Footer from '@/components/Footer';
 
 interface OrganizingStep {
   title: string;
@@ -192,6 +192,7 @@ const OrganizePage = () => {
           </Button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

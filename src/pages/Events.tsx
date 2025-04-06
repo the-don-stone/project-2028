@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Calendar, MapPin, Clock, Users } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +5,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbS
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from 'react-router-dom';
+import Footer from '@/components/Footer';
 
 interface Event {
   id: number;
@@ -183,6 +183,7 @@ const EventsPage = () => {
           </Button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

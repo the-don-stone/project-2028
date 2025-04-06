@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Link } from 'react-router-dom';
+import Footer from '@/components/Footer';
 
 interface DonationLink {
   name: string;
@@ -254,9 +254,9 @@ const DonatePage = () => {
           </p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
 
 export default DonatePage;
-
