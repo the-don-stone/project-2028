@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Github, Mail, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -41,10 +42,10 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Take Action</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white/80 hover:text-project-red transition-colors">Volunteer</a></li>
-              <li><a href="#" className="text-white/80 hover:text-project-red transition-colors">Donate</a></li>
-              <li><a href="#" className="text-white/80 hover:text-project-red transition-colors">Events</a></li>
-              <li><a href="#" className="text-white/80 hover:text-project-red transition-colors">Organize</a></li>
+              <li><Link to="/join" className="text-white/80 hover:text-project-red transition-colors">Volunteer</Link></li>
+              <li><Link to="/donate" className="text-white/80 hover:text-project-red transition-colors">Donate</Link></li>
+              <li><Link to="/events" className="text-white/80 hover:text-project-red transition-colors">Events</Link></li>
+              <li><Link to="/organize" className="text-white/80 hover:text-project-red transition-colors">Organize</Link></li>
             </ul>
           </div>
           
