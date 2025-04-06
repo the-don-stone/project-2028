@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const CallToAction = () => {
   return (
@@ -12,9 +13,11 @@ const CallToAction = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button className="bg-white text-project-red hover:bg-white/90 px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300 flex items-center">
-            Get Involved <ArrowRight className="ml-2 w-5 h-5" />
-          </button>
+          <Link to="/join">
+            <button className="bg-white text-project-red hover:bg-white/90 px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300 flex items-center">
+              Get Involved <ArrowRight className="ml-2 w-5 h-5" />
+            </button>
+          </Link>
           
           <button className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300">
             Learn More

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Globe, Shield, Flag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -23,9 +24,11 @@ const Header = () => {
         </p>
         
         <div className="pt-4">
-          <button className="bg-project-red hover:bg-project-red/90 text-white px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-slide-up">
-            Join The Movement
-          </button>
+          <Link to="/join">
+            <button className="bg-project-red hover:bg-project-red/90 text-white px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-slide-up">
+              Join The Movement
+            </button>
+          </Link>
         </div>
       </div>
     </header>
