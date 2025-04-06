@@ -13,6 +13,7 @@ import Principle4 from "./pages/Principle4";
 import Principle5 from "./pages/Principle5";
 import Principle6 from "./pages/Principle6";
 import JoinMovement from "./pages/JoinMovement";
+import DonatePage from "./pages/Donate";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/principle5" element={<Principle5 />} />
           <Route path="/principle6" element={<Principle6 />} />
           <Route path="/join" element={<JoinMovement />} />
+          <Route path="/donate" element={<DonatePage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -19,9 +19,11 @@ const CallToAction = () => {
             </button>
           </Link>
           
-          <button className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300">
-            Learn More
-          </button>
+          <Link to="/donate">
+            <button className="bg-transparent border-2 border-white hover:bg-white/10 text-white px-8 py-3 rounded-md text-lg font-semibold transition-all duration-300">
+              Learn More
+            </button>
+          </Link>
         </div>
       </div>
     </section>
