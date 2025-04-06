@@ -183,11 +183,15 @@ const DonatePage = () => {
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink as={Link} to="/">Home</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link to="/">Home</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink as={Link} to="/donate">Donate</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link to="/donate">Donate</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -255,3 +259,4 @@ const DonatePage = () => {
 };
 
 export default DonatePage;
+
