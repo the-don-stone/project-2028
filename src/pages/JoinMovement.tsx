@@ -1,10 +1,11 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { Rocket, Eye, Lock, Shield, MoveRight } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -25,7 +26,6 @@ const formSchema = z.object({
     message: "Please enter a valid email address.",
   }),
   message: z.string().optional(),
-  subscribe: z.boolean().default(false),
   privacyPolicy: z.boolean().refine(value => value === true, {
     message: "You must agree to our privacy policy.",
   })
@@ -35,6 +35,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 const JoinMovement = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   // Define form with validation
   const form = useForm<FormValues>({
@@ -43,24 +44,49 @@ const JoinMovement = () => {
       name: "",
       email: "",
       message: "",
-      subscribe: false,
       privacyPolicy: false,
     },
   });
 
   // Form submission handler
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = async (data: FormValues) => {
     console.log("Form submitted:", data);
+    setIsSubmitting(true);
     
-    // In a real application, you'd submit this data to your backend
-    // For now, we'll just show a success toast
-    toast({
-      title: "Thank you for joining the movement!",
-      description: "We'll get in touch with you soon.",
-    });
-    
-    // Reset the form
-    form.reset();
+    try {
+      // Initialize EmailJS with your service ID
+      // Note: You would need to create an account on EmailJS and set up a service
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        message: data.message || "No message provided",
+        to_email: "theproject2028@proton.me"
+      };
+      
+      await emailjs.send(
+        'service_contact_form', // Replace with your EmailJS service ID
+        'template_contact_form', // Replace with your EmailJS template ID
+        templateParams,
+        'your_user_id' // Replace with your EmailJS user ID
+      );
+      
+      toast({
+        title: "Thank you for joining the movement!",
+        description: "Your message has been sent successfully.",
+      });
+      
+      // Reset the form
+      form.reset();
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -211,27 +237,6 @@ const JoinMovement = () => {
 
                     <FormField
                       control={form.control}
-                      name="subscribe"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md p-4 bg-gray-50">
-                          <FormControl>
-                            <Checkbox
-                              checked={field.value}
-                              onCheckedChange={field.onChange}
-                            />
-                          </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel>Subscribe to our newsletter</FormLabel>
-                            <FormDescription>
-                              Receive occasional updates about our progress and ways to get involved. We respect your inbox and will email sparingly.
-                            </FormDescription>
-                          </div>
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
                       name="privacyPolicy"
                       render={({ field }) => (
                         <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md">
@@ -252,8 +257,12 @@ const JoinMovement = () => {
                       )}
                     />
 
-                    <Button type="submit" className="w-full md:w-auto">
-                      Join the Movement
+                    <Button 
+                      type="submit" 
+                      className="w-full md:w-auto"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Sending..." : "Join the Movement"}
                     </Button>
                   </form>
                 </Form>
