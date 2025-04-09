@@ -16,6 +16,7 @@ import JoinMovement from "./pages/JoinMovement";
 import DonatePage from "./pages/Donate";
 import EventsPage from "./pages/Events";
 import OrganizePage from "./pages/Organize";
+import Framework from "./pages/Framework";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/organize" element={<OrganizePage />} />
+          <Route path="/framework" element={<Framework />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
