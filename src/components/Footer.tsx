@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Github, Mail, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -32,7 +31,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Resources</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white/80 hover:text-project-red transition-colors">Framework Document</a></li>
+              <li><Link to="/framework" className="text-white/80 hover:text-project-red transition-colors">Framework Document</Link></li>
               <li><a href="#" className="text-white/80 hover:text-project-red transition-colors">Research</a></li>
               <li><a href="#" className="text-white/80 hover:text-project-red transition-colors">Publications</a></li>
               <li><a href="#" className="text-white/80 hover:text-project-red transition-colors">Press Kit</a></li>
