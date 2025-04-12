@@ -8,6 +8,45 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbS
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 const JoinMovement = () => {
+  const volunteerOrgs = [
+    {
+      name: "Sunrise Movement",
+      description: "A youth movement to stop climate change and create millions of good jobs in the process.",
+      website: "https://www.sunrisemovement.org/",
+      focus: "Climate Justice"
+    },
+    {
+      name: "Democratic Socialists of America",
+      description: "Working to build progressive movements for social change while establishing an openly democratic socialist presence in American communities and politics.",
+      website: "https://www.dsausa.org/",
+      focus: "Economic Justice"
+    },
+    {
+      name: "Working Families Party",
+      description: "A grassroots political party fighting for a nation that cares for all of us.",
+      website: "https://workingfamilies.org/",
+      focus: "Workers' Rights"
+    },
+    {
+      name: "Union of Concerned Scientists",
+      description: "Using rigorous, independent science to solve our planet's most pressing problems.",
+      website: "https://www.ucsusa.org/",
+      focus: "Science Advocacy"
+    },
+    {
+      name: "Our Revolution",
+      description: "Building a progressive grassroots political movement to transform American politics.",
+      website: "https://ourrevolution.com/",
+      focus: "Political Reform"
+    },
+    {
+      name: "Black Lives Matter",
+      description: "A global organization whose mission is to eradicate white supremacy and build local power to intervene in violence inflicted on Black communities.",
+      website: "https://blacklivesmatter.com/",
+      focus: "Racial Justice"
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -97,6 +136,35 @@ const JoinMovement = () => {
                   </ul>
                 </CardContent>
               </Card>
+            </div>
+
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-project-darkblue mb-6 text-center">Recommended Organizations to Volunteer With</h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8 text-center">
+                While Project 2028 is focused on framework development, these organizations are doing incredible work aligned with our principles:
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {volunteerOrgs.map((org, index) => (
+                  <Card key={index} className="shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
+                    <CardHeader>
+                      <CardTitle className="text-project-darkblue">{org.name}</CardTitle>
+                      <CardDescription className="font-medium text-project-red">{org.focus}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-700 mb-4">{org.description}</p>
+                      <a 
+                        href={org.website} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-project-darkblue font-medium hover:text-project-red transition-colors inline-flex items-center"
+                      >
+                        Visit Website <MoveRight className="ml-1 h-4 w-4" />
+                      </a>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
 
             <Card className="shadow-lg">
