@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Users, CheckCircle, Download, FileText, MessageSquare, Award } from 'lucide-react';
+import { Users, CheckCircle, Download, FileText, MessageSquare, Award, BookOpen, Calendar, MessageCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
@@ -73,22 +74,26 @@ const resourceLinks = [
   {
     title: "Organizer's Handbook",
     description: "Comprehensive guide to building effective local groups",
-    icon: <Download className="w-5 h-5" />
+    icon: <BookOpen className="w-5 h-5" />,
+    link: "/organizers-handbook"
   },
   {
     title: "Event Planning Templates",
     description: "Ready-to-use checklists and planning documents",
-    icon: <Download className="w-5 h-5" />
+    icon: <Calendar className="w-5 h-5" />,
+    link: "/event-planning"
   },
   {
     title: "Discussion Guides",
     description: "Frameworks for hosting productive community conversations",
-    icon: <Download className="w-5 h-5" />
+    icon: <MessageCircle className="w-5 h-5" />,
+    link: "/discussion-guides"
   },
   {
     title: "Messaging Toolkit",
     description: "Key talking points and communication strategies",
-    icon: <Download className="w-5 h-5" />
+    icon: <MessageSquare className="w-5 h-5" />,
+    link: "/messaging-toolkit"
   }
 ];
 
@@ -165,18 +170,22 @@ const OrganizePage = () => {
                         <h4 className="font-medium">{resource.title}</h4>
                         <p className="text-sm text-muted-foreground">{resource.description}</p>
                       </div>
-                      <Button variant="ghost" size="icon" className="text-project-blue">
-                        {resource.icon}
-                      </Button>
+                      <Link to={resource.link}>
+                        <Button variant="ghost" size="icon" className="text-project-blue">
+                          {resource.icon}
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
             <div className="mt-6">
-              <Button className="w-full bg-project-blue hover:bg-blue-800">
-                Access Resource Library
-              </Button>
+              <Link to="/organizers-handbook">
+                <Button className="w-full bg-project-blue hover:bg-blue-800">
+                  Access Resource Library
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -187,9 +196,11 @@ const OrganizePage = () => {
             Join our network of organizers and get personalized support to launch your local efforts.
             We'll connect you with experienced mentors and fellow organizers in your area.
           </p>
-          <Button size="lg" className="bg-white text-project-blue hover:bg-gray-100">
-            Sign Up as an Organizer
-          </Button>
+          <Link to="/join">
+            <Button size="lg" className="bg-white text-project-blue hover:bg-gray-100">
+              Sign Up as an Organizer
+            </Button>
+          </Link>
         </div>
       </div>
       <Footer />

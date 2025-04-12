@@ -17,6 +17,10 @@ import DonatePage from "./pages/Donate";
 import EventsPage from "./pages/Events";
 import OrganizePage from "./pages/Organize";
 import Framework from "./pages/Framework";
+import OrganizersHandbook from "./pages/OrganizersHandbook";
+import EventPlanning from "./pages/EventPlanning";
+import DiscussionGuides from "./pages/DiscussionGuides";
+import MessagingToolkit from "./pages/MessagingToolkit";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +43,10 @@ const App = () => (
           <Route path="/events" element={<EventsPage />} />
           <Route path="/organize" element={<OrganizePage />} />
           <Route path="/framework" element={<Framework />} />
+          <Route path="/organizers-handbook" element={<OrganizersHandbook />} />
+          <Route path="/event-planning" element={<EventPlanning />} />
+          <Route path="/discussion-guides" element={<DiscussionGuides />} />
+          <Route path="/messaging-toolkit" element={<MessagingToolkit />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
